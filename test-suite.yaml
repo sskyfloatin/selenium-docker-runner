@@ -1,0 +1,20 @@
+services:
+  vendor-portal:
+    image: skyfloatin/selenium
+    environment:
+      - BROWSER=chrome
+      - HUB_HOST=hub # hub - because all containers part of same network
+      - THREAD_COUNT=3
+      - TEST_SUITE=vendor-portal.xml
+    volumes:
+      - ./output/vendor-portal:/home/selenium-docker/test-output
+  flight-reservation:
+    image: skyfloatin/selenium
+    environment:
+      - BROWSER=firefox
+      - HUB_HOST=hub # hub - because all containers part of same network
+      - THREAD_COUNT=3
+      - TEST_SUITE=flight-reservation.xml
+    volumes:
+      - ./output/flight-reservation:/home/selenium-docker/test-output
+
