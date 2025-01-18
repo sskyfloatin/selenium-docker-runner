@@ -2,7 +2,7 @@ services:
   vendor-portal:
     image: skyfloatin/selenium
     environment:
-      - BROWSER=chrome
+      - BROWSER
       - HUB_HOST=hub # hub - because all containers part of same network
       - THREAD_COUNT=3
       - TEST_SUITE=vendor-portal.xml
@@ -11,7 +11,7 @@ services:
   flight-reservation:
     image: skyfloatin/selenium
     environment:
-      - BROWSER=firefox
+      - BROWSER
       - HUB_HOST=hub # hub - because all containers part of same network
       - THREAD_COUNT=3
       - TEST_SUITE=flight-reservation.xml
